@@ -141,8 +141,8 @@ if counts:
     )
     st.dataframe(df_counts, use_container_width=True, hide_index=True)
 
-    # ---------- Analytics Visualization ----------
-    st.subheader("Analytics Visualization")
+    # ---------- Analytics Chart ----------
+    st.subheader("Analytics Chart")
     pivot = df_counts.pivot_table(index="Tag", columns=["Quarter", "Result"], values="Total").fillna(0)
     pivot.columns = [f"{q}_{r}" for q, r in pivot.columns]  # flatten MultiIndex
     st.bar_chart(pivot)
